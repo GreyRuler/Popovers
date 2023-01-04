@@ -1,7 +1,6 @@
 import { Popover } from './ts/types/Popover';
 
 export default class PopoverWidget {
-
 	private popovers: Popover[] = [];
 
 	showPopover(title: string, content: string, element: HTMLElement) {
@@ -30,17 +29,17 @@ export default class PopoverWidget {
 
 		const { left, top } = element.getBoundingClientRect();
 
-		popoverElement.style.left = left + element.offsetWidth / 2 - popoverElement.offsetWidth / 2 + 'px';
-		popoverElement.style.top = top - (popoverElement.offsetHeight + 10) + 'px';
+		popoverElement.style.left = `${left + element.offsetWidth / 2 - popoverElement.offsetWidth / 2}px`;
+		popoverElement.style.top = `${top - (popoverElement.offsetHeight + 10)}px`;
 
 		return id;
 	}
 
 	removePopover(id: number) {
-		const popover = this.popovers.find(p => p.id === id);
+		const popover = this.popovers.find((p) => p.id === id);
 
 		popover?.element.remove();
 
-		this.popovers = this.popovers.filter(p => p.id !== id);
+		this.popovers = this.popovers.filter((p) => p.id !== id);
 	}
 }

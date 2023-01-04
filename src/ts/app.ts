@@ -18,4 +18,4 @@ buttonToggle?.addEventListener('click', () => {
 		popoverWidget.removePopover(popoverID);
 	}
 	flag = !flag;
-})
+});
